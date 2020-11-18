@@ -18,10 +18,10 @@ jobs:
 
       - name: Tag image
         run: |
-          docker tag ${{ github.sha }} ${ENDPOINT}:
-          docker tag ${{ github.sha }} ${ENDPOINT}:${{ github.sha }}
-          docker tag ${{ github.sha }} ghcr.io/${ENDPOINT}:
-          docker tag ${{ github.sha }} ghcr.io/${ENDPOINT}:${{ github.sha }}
+          docker tag ${{ github.sha }} dodslaser/flood-mod:
+          docker tag ${{ github.sha }} dodslaser/flood-mod:${{ github.sha }}
+          docker tag ${{ github.sha }} ghcr.io/dodslaser/flood-mod:
+          docker tag ${{ github.sha }} ghcr.io/dodslaser/flood-mod:${{ github.sha }}
 
       - name: Credential check
         run: |
