@@ -56,4 +56,4 @@ jobs:
         if: ${{ env.DOCKERUSER && env.DOCKERPASS }}
         run: |
           docker push ${ENDPOINT}:${{ github.sha }}
-          docker push ${ENDPOINT}:
+          docker push ${ENDPOINT}
