@@ -1,0 +1,22 @@
+upstream backendrtorrent {
+    server unix:/run/php/.rtorrent.sock;
+}
+
+server {
+    listen 80 default_server;
+    server_name _;
+    client_max_body_size 0;
+
+    location / {
+        access_log /config/log/nginx/flood.access.log;
+        error_log /config/log/nginx/flood.error.log;
+        proxy_pass http://localhost:3000/;
+    }
+
+    location /RPC2 {
+        access_log /config/log/nginx/rutorrent.rpc2.access.log;
+        error_log /config/log/nginx/rutorrent.rpc2.error.log;
+        include /etc/nginx/scgi_params;
+        scgi_pass backendrtorrent;
+    }
+}
