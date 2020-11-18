@@ -45,7 +45,7 @@ jobs:
         if: ${{ env.CR_USER && env.CR_PAT }}
         run: |
           docker push ghcr.io/${ENDPOINT}:${{ github.sha }}
-          docker push ghcr.io/${ENDPOINT}:
+          docker push ghcr.io/${ENDPOINT}
 
       - name: Login to DockerHub
         if: ${{ env.DOCKERUSER && env.DOCKERPASS }}
