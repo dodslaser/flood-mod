@@ -2,6 +2,6 @@
 
 export $FLOOD_AUTH
 s6-setuidgid abc flood \
-    -h localhost -p 3000 -d /flood \
+    -h localhost -p 3000 -d /config/flood \
     --rtsocket /run/php/.rtorrent.sock \
     --auth ${FLOOD_AUTH:-none}

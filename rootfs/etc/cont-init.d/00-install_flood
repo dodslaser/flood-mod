@@ -3,4 +3,5 @@
 echo '**Installing flood frontend**'
 apk add --no-cache nodejs npm
 npm install -g flood
-mkdir /flood
+mkdir -p /config/flood
+chown abc:abc /config/flood
